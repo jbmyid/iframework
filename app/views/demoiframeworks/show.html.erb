@@ -1,2 +1,14 @@
-<h1><%= link_to iframe_demoiframeworks_path, method: :get, title: "Login", id: "iframe_id",remote: true, name: "login" do %>Login
-<% end %></h1>
+<!-- <h1><%= link_to iframe_demoiframeworks_path, method: :get, title: "Login", id: "iframe_id",remote: true, name: "login" do %>Login
+<% end %></h1> -->
+
+<%= form_tag iframe_demoiframeworks_path , remote: true, method: :get do %>
+  <%= text_field_tag "private_key", "", placeholder: "private_key" %><br>
+  <%= text_field_tag "api_key", "", placeholder: "api_key" %><br>
+  <%= text_field_tag "name", "", placeholder: "name" %><br>
+  <%= text_field_tag "email","", placeholder: "email" %><br>
+  <%= text_field_tag "request_url","http://staging.mobilock.in/sso/sessions/new", placeholder: "Request URL" %><br>
+
+  <%= submit_tag "Login"%>
+<% end %>
+<div id="iframe_id">
+</div>
